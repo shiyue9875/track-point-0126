@@ -31,7 +31,7 @@ function loadSourceMap(fileName) {
   }
   if (!file) return;
   return new Promise(resolve => {
-    fetch(`http://localhost:8083/getmap?fileName=${file}&env=${env}`).then(response => {
+    fetch(`http://localhost:8084/getmap?fileName=${file}&env=${env}`).then(response => {
       if (env == 'development') {
         resolve(response.text());
       } else {
@@ -43,6 +43,7 @@ function loadSourceMap(fileName) {
 
 export const findCodeBySourceMap = async ({ fileName, line, column }, callback) => {
   let sourceData = await loadSourceMap(fileName);
+  console.log(sourceData);
   if (!sourceData) return;
   let result, codeList;
   if (process.env.NODE_ENV == 'development') {

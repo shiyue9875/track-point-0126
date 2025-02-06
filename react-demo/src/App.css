@@ -1,0 +1,51 @@
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  padding: 0 10px;
+}
+
+.header {
+  width: 100%;
+  padding: 10px 20px;
+  height: 60px;
+  text-align: left;
+  background-color: #ffffff;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.header .logo {
+  width: 70px;
+  height: 42px;
+}
+
+.header .title {
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+nav {
+  padding: 10px;
+}
+
+nav a {
+  font-weight: bold;
+  color: #2c3e50;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+nav a.active {
+  color: #42b983;
+}
+
+* {
+  margin: 0;
+}

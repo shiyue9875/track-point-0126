@@ -11,14 +11,14 @@
   "files": [
     "dist"
   ],
-  "author": "海阔天空",
+  "author": "埋的都队",
   "license": "ISC",
   "dependencies": {
     "@types/ua-parser-js": "^0.7.36",
     "ua-parser-js": "1.0.32",
-    "@websee/common": "workspace:*",
-    "@websee/core": "workspace:*",
-    "@websee/types": "workspace:*"
+    "@websee/common": "4.0.2",
+    "@websee/types": "4.0.2",
+    "@websee/utils": "4.0.2"
   },
   "repository": {
     "type": "git",

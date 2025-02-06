@@ -8,7 +8,7 @@
     "plugin:@typescript-eslint/recommended"
   ],
   "rules": {
-    "prettier/prettier": "error",
+    "prettier/prettier":["error",{"endOfLine":"auto"}],
     "no-useless-escape": "off",
     "@typescript-eslint/interface-name-prefix": "off",
     "@typescript-eslint/explicit-function-return-type": "off",

@@ -115,6 +115,7 @@ export default {
           .then(response => response.json())
           .then(res => {
             this.tableData = res.data;
+
           });
       }, 500);
     },
@@ -159,7 +160,9 @@ export default {
       this.activities = breadcrumb;
     },
     revertCode(row) {
+      console.log(row)
       findCodeBySourceMap(row, res => {
+        console.log("2")
         this.dialogTitle = '查看源码';
         this.fullscreen = false;
         this.revertdialog = true;

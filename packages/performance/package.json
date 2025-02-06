@@ -11,16 +11,16 @@
   "files": [
     "dist"
   ],
-  "author": "海阔天空",
+  "author": "埋的都队",
   "license": "ISC",
   "repository": {
     "type": "git",
     "url": "git@github.com:xy-sea/web-see.git"
   },
   "dependencies": {
-    "@websee/common": "workspace:*",
-    "@websee/types": "workspace:*",
-    "@websee/utils": "workspace:*",
+    "@websee/common": "4.0.2",
+    "@websee/types": "4.0.2",
+    "@websee/utils": "4.0.2",
     "web-vitals": "^3.1.0"
   }
 }

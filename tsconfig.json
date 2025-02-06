@@ -23,7 +23,7 @@
     "baseUrl": "./",
     "paths": {
       "*": ["src/*", "node_modules/*"],
-      "@websee/*":["packages/*/src"],
+      "@websee/*": ["packages/*/src"]
     },
     "jsx": "react",
     "esModuleInterop": true

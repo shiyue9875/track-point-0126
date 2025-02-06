@@ -1,6 +1,6 @@
 <div align="center">
     <a href="#" target="_blank">
-    <img src="https://i.postimg.cc/bN7f4YY3/logo.png" alt="websee-logo" height="80">
+    <!-- <img src="https://i.postimg.cc/bN7f4YY3/logo.png" alt="websee-logo" height="80"> -->
     </a>
     <p>前端监控SDK，可用来收集并上报：代码报错、性能数据、页面录屏、用户行为、白屏检测等个性化指标数据</p>
     <div align="left">
@@ -297,11 +297,8 @@ webSee.log({
 
 ![web-see.gif](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1ca730fd02164501a82eb492a6bf8583~tplv-k3u1fbpfcp-watermark.image?)
 
-## 特别感谢
-
-- [haixin-fang](https://github.com/haixin-fang)
-- [wenzhu-eternal](https://github.com/wenzhu-eternal)
 
 ## 监控 demo 仓库
 
 [web-see-demo](https://github.com/xy-sea/web-see-demo)
+

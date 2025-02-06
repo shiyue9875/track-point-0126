@@ -11,10 +11,10 @@
   "files": [
     "dist"
   ],
-  "author": "海阔天空",
+  "author": "埋的都队",
   "license": "ISC",
   "dependencies": {
-    "@websee/common": "workspace:*"
+    "@websee/common": "4.0.2"
   },
   "repository": {
     "type": "git",
