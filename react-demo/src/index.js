@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import webSee from '@websee/core';
-import performance from '@websee/performance';
-import recordscreen from '@websee/recordscreen';
+import webSee from '../../packages/core/src';
+import performance from '../../packages/performance/src';
+import recordscreen from '../../packages/recordscreen/src';
 
 webSee.init({
   dsn: 'http://localhost:8081/reportData',
