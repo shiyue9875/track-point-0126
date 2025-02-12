@@ -8,12 +8,12 @@ import performance from '../../packages/performance/src';
 import recordscreen from '../../packages/recordscreen/src';
 
 webSee.init({
-  dsn: 'http://localhost:8081/reportData',
+  dsn: 'http://localhost:8084/reportData',
   apikey: 'project1',
   silentWhiteScreen: true,
   skeletonProject: true,
   repeatCodeError: true,
-  userId: '12345',
+  userId: '12345'
 });
 
 webSee.use(performance);

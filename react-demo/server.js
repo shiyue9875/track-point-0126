@@ -8,11 +8,11 @@ const coBody = require('co-body');
 app.use(bodyParser.json({ limit: '100mb' }));
 app.use(bodyParser.urlencoded({ limit: '100mb', extended: true, parameterLimit: 50000 }));
 
-app.all('*', function (res, req, next) {
-  req.header('Access-Control-Allow-Origin', '*');
-  req.header('Access-Control-Allow-Headers', 'Content-Type');
-  req.header('Access-Control-Allow-Methods', '*');
-  req.header('Content-Type', 'application/json;charset=utf-8');
+app.all('*', function (req, res, next) {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Headers', 'Content-Type');
+  res.header('Access-Control-Allow-Methods', '*');
+  res.header('Content-Type', 'application/json;charset=utf-8');
   next();
 });
 
@@ -71,34 +71,34 @@ app.get('/getRecordScreenId', (req, res) => {
 
 app.post('/reportData', async (req, res) => {
   try {
-    // req.body 不为空时为正常请求，如录屏信息
     let length = Object.keys(req.body).length;
     if (length) {
       recordScreenList.push(req.body);
     } else {
-      // 使用 web beacon 上报数据
-      let data = await coBody.json(req);
-      if (!data) return;
-      if (data.type == 'performance') {
-        performanceList.push(data);
-      } else if (data.type == 'recordScreen') {
-        recordScreenList.push(data);
-      } else if (data.type == 'whiteScreen') {
-        whiteScreenList.push(data);
-      } else {
-        errorList.push(data);
+      try {
+        let data = await coBody.json(req);
+        if (!data) {
+          return res.status(400).json({ error: '数据为空' });
+        }
+        if (data.type == 'performance') {
+          performanceList.push(data);
+        } else if (data.type == 'recordScreen') {
+          recordScreenList.push(data);
+        } else if (data.type == 'whiteScreen') {
+          whiteScreenList.push(data);
+        } else {
+          errorList.push(data);
+        }
+      } catch (parseError) {
+        return res.status(400).json({ error: '解析数据失败' });
       }
     }
     res.send({
       code: 200,
-      meaage: '上报成功！',
+      message: '上报成功！',
     });
   } catch (err) {
-    res.send({
-      code: 203,
-      meaage: '上报失败！',
-      err,
-    });
+    return res.status(500).json({ error: err.message });
   }
 });
 

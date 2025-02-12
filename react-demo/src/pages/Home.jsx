@@ -23,7 +23,9 @@ const HomeView = () => {
         .then(response => response.json())
         .then(res => {
           setTableData(res.data);
-          console.log(res.data);
+        })
+        .catch(err => {
+          console.error('获取错误列表失败:', err);
         });
     }, 500);
   };
@@ -123,7 +125,6 @@ const HomeView = () => {
   };
 
   const codeErr = () => {
-    getTableData();
     let a = undefined;
     if (a.length) {
       console.log('1');
